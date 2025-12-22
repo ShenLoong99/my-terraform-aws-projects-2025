@@ -156,28 +156,6 @@ resource "aws_iam_role_policy_attachment" "lambda_bedrock_access" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonBedrockFullAccess"
 }
 
-// Define Amplify App
-resource "aws_amplify_app" "cloud_fun_facts" {
-  name = "cloud-fun-facts-generator"
-
-  # Optional: set custom environment variables
-  environment_variables = {
-    API_URL = aws_apigatewayv2_stage.default.invoke_url
-  }
-
-  # Optional: Auto branch deploy (if using Git)
-  enable_branch_auto_build = false
-}
-
-// Create an Amplify Branch
-resource "aws_amplify_branch" "production" {
-  app_id      = aws_amplify_app.cloud_fun_facts.id
-  branch_name = "production"
-
-  # Auto-build disabled if using drag-and-drop
-  enable_auto_build = false
-}
-
 // Create S3 Bucket for Frontend
 resource "aws_s3_bucket" "frontend_bucket" {
   bucket        = "cloud-fun-facts-frontend-${random_id.bucket_id.hex}"
