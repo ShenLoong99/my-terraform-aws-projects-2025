@@ -1,119 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<body>
-
-<h1>☁️ Cloud Fun Facts – Full-Stack Serverless AI</h1>
-
-<div class="tech-stack">
-  <span class="badge">AWS Lambda</span>
-  <span class="badge">API Gateway</span>
-  <span class="badge">DynamoDB</span>
-  <span class="badge">Amazon Bedrock (Claude 3.5)</span>
-  <span class="badge">S3 + CloudFront</span>
-  <span class="badge">Terraform</span>
+<div>
+  <h1>☁️ Cloud Fun Facts Generator</h1>
+  <p>
+    An AI-powered serverless application built with Terraform, AWS Lambda, and Amazon Bedrock.
+    <br />
+    <a href="#about-the-project"><strong>Explore the docs »</strong></a>
+  </p>
 </div>
 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#cost-optimization">Cost Optimization</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<h2 id="about-the-project">About The Project</h2>
 <p>
-  This project is a <strong>complete full-stack serverless application</strong> that generates engaging cloud computing facts. It utilizes <strong>Infrastructure as Code (Terraform)</strong> to provision a scalable, AI-enhanced backend and a secure, globally distributed frontend.
+  A full-stack, AI-enhanced serverless application designed to bridge the gap between isolated tutorials and real-world architecture. This project demonstrates a production-ready flow where Terraform manages a high-performance backend and a secure frontend.
 </p>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
 
-
----
-
-<h2>📐 Architecture Overview</h2>
-
+<h2 id="built-with">Built With</h2>
 <ul>
-  <li><strong>Frontend:</strong> Static HTML/JS hosted on <strong>Amazon S3</strong> and distributed via <strong>Amazon CloudFront</strong> using Origin Access Control (OAC).</li>
-  <li><strong>API Layer:</strong> <strong>Amazon API Gateway (HTTP API)</strong> with CORS enabled for cross-origin frontend requests.</li>
-  <li><strong>Compute:</strong> <strong>AWS Lambda</strong> running Python 3.13 on <strong>ARM64 (Graviton2)</strong> for cost-efficiency.</li>
-  <li><strong>Database:</strong> <strong>Amazon DynamoDB</strong> (On-Demand) storing a library of curated cloud facts.</li>
-  <li><strong>AI Integration:</strong> <strong>Amazon Bedrock (Claude 3.5 Sonnet)</strong> used to transform raw facts into witty, engaging content.</li>
+  <li><strong>Terraform Cloud</strong> - Infrastructure Provisioning & State Management</li>
+  <li><strong>AWS Lambda (Python 3.13)</strong> - Serverless Logic</li>
+  <li><strong>AWS API Gateway</strong> - Secure HTTP Endpoints</li>
+  <li><strong>Amazon DynamoDB</strong> - NoSQL Fact Storage</li>
+  <li><strong>Amazon Bedrock (Claude 3.5)</strong> - AI Content Transformation</li>
+  <li><strong>Amazon S3 & CloudFront</strong></li>
 </ul>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
 
----
+<h2 id="architecture">Architecture</h2>
+<p>
+  The application follows a modern serverless flow:
+  <br>
+  <code>User Browser</code> ➔ <code>CloudFront</code> ➔ <code>S3 (Frontend)</code>
+  <br>
+  <code>Frontend JS</code> ➔ <code>API Gateway</code> ➔ <code>Lambda</code> ➔ <code>DynamoDB (Fetch)</code> ➔ <code>Bedrock AI (Transform)</code>
+</p>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
 
-<h2>🚀 Deployment Instructions</h2>
-
-<p>Ensure you have the <a href="https://www.terraform.io/downloads">Terraform CLI</a> installed and AWS credentials configured.</p>
-
-<pre>
-# Initialize and connect to Terraform Cloud
-terraform init
-
-# Preview changes
-terraform plan
-
-# Deploy infrastructure
-terraform apply
-</pre>
-
-<div class="highlight">
-  <strong>Note:</strong> After deployment, the <code>cloudfront_url</code> output will provide your public website address.
-</div>
-
----
-
-<h2>💰 Cost Optimization (Free Tier Optimized)</h2>
-
-<p>This architecture is specifically designed to remain within the <strong>AWS Free Tier</strong> limits:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Service</th>
-      <th>Optimization Strategy</th>
-      <th>Estimated Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Lambda</strong></td>
-      <td>ARM64 architecture & 1M free requests/month.</td>
-      <td>$0.00</td>
-    </tr>
-    <tr>
-      <td><strong>CloudWatch</strong></td>
-      <td><strong>7-day log retention</strong> policy to prevent storage bloat.</td>
-      <td>$0.00</td>
-    </tr>
-    <tr>
-      <td><strong>DynamoDB</strong></td>
-      <td>Pay-per-request billing.</td>
-      <td>$0.00 (under low volume)</td>
-    </tr>
-    <tr>
-      <td><strong>CloudFront</strong></td>
-      <td>1TB of free data transfer per month.</td>
-      <td>$0.00</td>
-    </tr>
-    <tr>
-      <td><strong>S3</strong></td>
-      <td><strong>Lifecycle rules</strong> to expire old versions after 30 days.</td>
-      <td>$0.00</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-<h2>🛡️ Security & Scalability</h2>
-
+<h2 id="getting-started">Getting Started</h2>
+<h3>Prerequisites</h3>
 <ul>
-  <li><strong>Least Privilege:</strong> Lambda uses a dedicated IAM role with specific access to DynamoDB and Bedrock.</li>
-  <li><strong>Origin Protection:</strong> S3 bucket is 100% private; users can only access content via CloudFront OAC.</li>
-  <li><strong>Throttling:</strong> API Gateway is limited to 100 requests/sec to prevent cost spikes from bot abuse.</li>
-  <li><strong>HTTPS:</strong> Forced SSL redirection via CloudFront.</li>
+  <li>AWS Account with Bedrock Claude 3.5 model access enabled.</li>
+  <li>Terraform CLI (v1.5.0+) installed locally.</li>
+  <li>Terraform Cloud account for remote state management.</li>
 </ul>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
 
-<div class="warning">
-  <strong>Bedrock Access:</strong> Ensure you have manually requested access to <strong>Anthropic Claude</strong> models in your AWS Console (Bedrock > Model Access) before running the Lambda.
-</div>
+<h3>Installation</h3>
+<ol>
+  <li>Clone the repo</li>
+  <li>Initialize Terraform: <code>terraform init</code></li>
+  <li>Deploy to AWS: <code>terraform apply</code></li>
+</ol>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
 
----
+<h2 id="usage">Usage & Testing</h2>
+<p>Once deployment is complete, Terraform provides two key outputs:</p>
+<ul>
+  <li><strong>Web Interface:</strong> Access the live site at the <code>cloudfront_url</code> (e.g., <code>https://d11a5c37xehwja.cloudfront.net</code>).</li>
+  <li><strong>REST API:</strong> Test the raw backend directly at the <code>api_invoke_url</code>:
+    <br><code>curl https://g1kcof6nl1.execute-api.ap-southeast-1.amazonaws.com/funfact</code>
+  </li>
+</ul>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
 
-<footer>
-  Built by ShenLoong with ❤️ | Infrastructure powered by Terraform & AWS
-</footer>
+<h2 id="roadmap">Project Roadmap</h2>
+<ul>
+  <li>[x] <strong>Basic Version:</strong> Core logic with Lambda + API Gateway integration.</li>
+  <li>[x] <strong>Database Version:</strong> Persistence layer using DynamoDB to store and scale facts.</li>
+  <li>[x] <strong>GenAI Version:</strong> Integration with Amazon Bedrock to make facts witty and engaging.</li>
+  <li>[x] <strong>Frontend Distribution:</strong> Static site hosting via S3 with CloudFront (OAC) for global speed and security.</li>
+</ul>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
 
-</body>
-</html>
+<h2 id="cost-optimization">Cost Optimization (Free Tier)</h2>
+<p>This project is architected to run at <strong>$0/month</strong> for standard testing volumes:</p>
+<ul>
+  <li><strong>Lambda:</strong> Using <strong>ARM64</strong> architecture for better price-performance.</li>
+  <li><strong>Storage:</strong> S3 lifecycle rules to automatically clean up old files after 30 days.</li>
+  <li><strong>Logging:</strong> 7-day retention on CloudWatch logs to prevent storage costs.</li>
+  <li><strong>Throttling:</strong> API limits (100 req/s) to prevent unexpected usage spikes.</li>
+</ul>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
+
+<h2 id="contact">Contact</h2>
+<p>Tan Si Kai - <a href="https://linkedin.com/in/si-kai-tan">LinkedIn</a></p>
+<p>Project Link: <a href="https://https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator">Cloud Fun Facts</a></p>
+<div align="right"><a href="#top">↑ Back to Top</a></div>
