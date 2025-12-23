@@ -25,7 +25,7 @@
 <p>
   A full-stack, AI-enhanced serverless application designed to bridge the gap between isolated tutorials and real-world architecture. This project demonstrates a production-ready flow where Terraform manages a high-performance backend and a secure frontend.
 </p>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="built-with">Built With</h2>
 <ul>
@@ -36,7 +36,7 @@
   <li><strong>Amazon Bedrock (Claude 3.5)</strong> - AI Content Transformation</li>
   <li><strong>Amazon S3 & CloudFront</strong></li>
 </ul>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="architecture">Architecture</h2>
 <p>
@@ -46,7 +46,7 @@
   <br>
   <code>Frontend JS</code> ➔ <code>API Gateway</code> ➔ <code>Lambda</code> ➔ <code>DynamoDB (Fetch)</code> ➔ <code>Bedrock AI (Transform)</code>
 </p>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="getting-started">Getting Started</h2>
 <h3>Prerequisites</h3>
@@ -55,7 +55,7 @@
   <li>Terraform CLI (v1.5.0+) installed locally.</li>
   <li>Terraform Cloud account for remote state management.</li>
 </ul>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h3>Installation</h3>
 <ol>
@@ -63,7 +63,7 @@
   <li>Initialize Terraform: <code>terraform init</code></li>
   <li>Deploy to AWS: <code>terraform apply</code></li>
 </ol>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="usage">Usage & Testing</h2>
 <p>Once deployment is complete, Terraform provides two key outputs:</p>
@@ -73,7 +73,7 @@
     <br><code>curl https://g1kcof6nl1.execute-api.ap-southeast-1.amazonaws.com/funfact</code>
   </li>
 </ul>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="roadmap">Project Roadmap</h2>
 <ul>
@@ -82,7 +82,7 @@
   <li>[x] <strong>GenAI Version:</strong> Integration with Amazon Bedrock to make facts witty and engaging.</li>
   <li>[x] <strong>Frontend Distribution:</strong> Static site hosting via S3 with CloudFront (OAC) for global speed and security.</li>
 </ul>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="cost-optimization">Cost Optimization (Free Tier)</h2>
 <p>This project is architected to run at <strong>$0/month</strong> for standard testing volumes:</p>
@@ -92,9 +92,9 @@
   <li><strong>Logging:</strong> 7-day retention on CloudWatch logs to prevent storage costs.</li>
   <li><strong>Throttling:</strong> API limits (100 req/s) to prevent unexpected usage spikes.</li>
 </ul>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="contact">Contact</h2>
 <p>Tan Si Kai - <a href="https://linkedin.com/in/si-kai-tan">LinkedIn</a></p>
 <p>Project Link: <a href="https://https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator">Cloud Fun Facts</a></p>
-<div align="right"><a href="#top">↑ Back to Top</a></div>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
