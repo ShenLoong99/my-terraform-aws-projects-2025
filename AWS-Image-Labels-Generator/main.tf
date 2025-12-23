@@ -16,6 +16,28 @@ resource "aws_s3_bucket" "images_bucket" {
 resource "random_id" "bucket_id" {
   byte_length = 4
 }
+
+resource "aws_s3_bucket_lifecycle_configuration" "images_bucket_lifecycle" {
+  bucket = aws_s3_bucket.images_bucket.id
+
+  rule {
+    id     = "cleanup-old-files"
+    status = "Enabled"
+
+    # This empty filter tells AWS the rule applies to the WHOLE bucket
+    filter {}
+
+    # Example 1: Permanently delete objects after 30 days
+    expiration {
+      days = 30
+    }
+
+    # Example 2: If you enabled versioning, delete non-current versions after 7 days
+    noncurrent_version_expiration {
+      noncurrent_days = 7
+    }
+  }
+}
 ///////////////////////////////////////////////////////////////////////////////
 
 // Public access blocked
