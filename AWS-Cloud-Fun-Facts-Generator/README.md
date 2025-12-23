@@ -10,7 +10,7 @@
 <div>
   <h1>☁️ Cloud Fun Facts Generator</h1>
   <p>
-    <img src="assets/Cloud Fun Facts Webpage.png" alt="Architecture Diagram" width="800">
+    <img src="assets/Cloud Fun Facts Webpage.png" alt="Webpage Output" width="800">
   <p>
     An AI-powered serverless application built with Terraform, AWS Lambda, and Amazon Bedrock.
     <br />
@@ -81,7 +81,7 @@
   <li>Terraform Cloud account for remote state management.</li>
 </ul>
 <p>
-  <img src="assets/Terraform Cloud.png" alt="Architecture Diagram" width="800">
+  <img src="assets/Terraform Cloud.png" alt="Terraform Cloud" width="800">
 </p>
 
 <h3>Installation</h3>
@@ -95,7 +95,7 @@
 <h2 id="usage">Usage & Testing</h2>
 <p>Once deployment is complete, Terraform provides two key outputs:</p>
 <p>
-  <img src="assets/Terraform Output.png" alt="Architecture Diagram" width="800">
+  <img src="assets/Terraform Output.png" alt="Terraform Output" width="800">
 </p>
 <ul>
   <li><strong>Web Interface:</strong> Access the live site at the <code>cloudfront_url</code> (e.g., <code>https://d11a5c37xehwja.cloudfront.net</code>).</li>
@@ -126,7 +126,7 @@
 
 <h2 id="contact">Contact</h2>
 <p>Tan Si Kai - <a href="https://linkedin.com/in/si-kai-tan">LinkedIn</a></p>
-<p>Project Link: <a href="https://https://github.com/ShenLoong99/sky-aws-projects-v1-2025">Cloud Fun Facts</a></p>
+<p>Project Link: <a href="https://github.com/ShenLoong99/my-terraform-aws-projects-2025/tree/main/AWS-Cloud-Fun-Facts-Generator">Cloud Fun Facts</a></p>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 [contributors-shield]: https://img.shields.io/github/contributors/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
