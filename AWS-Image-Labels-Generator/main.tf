@@ -6,6 +6,8 @@ provider "aws" {
 // S3 Bucket (Image Storage)
 resource "aws_s3_bucket" "images_bucket" {
   bucket = "${var.project_name}-images-bucket-${random_id.bucket_id.hex}"
+  // empty bucket and destroy even if it has objects
+  force_destroy = true
 
   tags = {
     Name    = "${var.project_name}-bucket"
