@@ -3,7 +3,7 @@ terraform {
 
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "sky-projects-v1-2025"
+    organization = "my-terraform-aws-projects-2025"
 
     workspaces {
       name = "AWS-Cloud-Fun-Facts-Generator"
