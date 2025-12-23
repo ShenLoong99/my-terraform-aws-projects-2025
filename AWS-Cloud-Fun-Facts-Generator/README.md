@@ -1,12 +1,5 @@
 <a id="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![Unlicense License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <div>
   <h1>☁️ Cloud Fun Facts Generator</h1>
   <p>
@@ -23,6 +16,7 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
+    <li><a href="#use-cases">Use Cases</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
@@ -57,6 +51,19 @@
   <li><strong>Amazon DynamoDB</strong> - On-demand NoSQL database for fact storage</li>
   <li><strong>Amazon Bedrock (Claude 3.5)</strong> - Generative AI for real-time witty fact rewriting</li>
   <li><strong>Amazon S3 & CloudFront</strong> – Secure, global static web hosting</li>
+</ul>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
+
+<h2 id="use-cases">Use Cases</h2>
+<p>
+  This project demonstrates a production-grade serverless workflow, bridging the gap between manual "ClickOps" tutorials and professional Cloud Engineering
+</p>
+<ul>
+  <li><strong>Infrastructure Maturity:</strong> Replaces manual console clicks with Terraform Cloud for automated, reproducible state management.</li>
+  <li><strong>Secure Web Hosting:</strong> Uses Amazon S3 & CloudFront (OAC) to deliver high-performance, globally distributed content with zero public bucket access.</li>
+  <li><strong>AI-Driven Logic:</strong> Integrates Amazon Bedrock (Claude 3.5) to transform static data into witty, human-like responses in real-time.</li>
+  <li><strong>Performance & Cost:</strong> Optimized with AWS Lambda on ARM64 architecture for superior price-performance.</li>
+  <li><strong>Production Safeguards:</strong> Features API Gateway Throttling to prevent cost overruns and DynamoDB On-Demand for seamless scaling.</li>
 </ul>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
@@ -128,16 +135,3 @@
 <p>Tan Si Kai - <a href="https://linkedin.com/in/si-kai-tan">LinkedIn</a></p>
 <p>Project Link: <a href="https://github.com/ShenLoong99/my-terraform-aws-projects-2025/tree/main/AWS-Cloud-Fun-Facts-Generator">Cloud Fun Facts</a></p>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
-
-[contributors-shield]: https://img.shields.io/github/contributors/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
-[contributors-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
-[forks-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/network/members
-[stars-shield]: https://img.shields.io/github/stars/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
-[stars-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
-[issues-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/issues
-[license-shield]: https://img.shields.io/github/license/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
-[license-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/https://linkedin.com/in/si-kai-tan
