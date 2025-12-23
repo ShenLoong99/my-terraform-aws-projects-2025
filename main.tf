@@ -221,6 +221,11 @@ resource "aws_s3_object" "frontend_index" {
   key          = "index.html"
   source       = "${path.module}/frontend/index.html"
   content_type = "text/html"
+
+  # Use templatefile to inject the API URL dynamically
+  content = templatefile("${path.module}/frontend/index.html", {
+    api_url = aws_apigatewayv2_stage.default.invoke_url
+  })
 }
 
 // CORS Settings for API Gateway
