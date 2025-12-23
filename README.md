@@ -1,6 +1,8 @@
 <div>
   <h1>☁️ Cloud Fun Facts Generator</h1>
   <p>
+    <img src="images/Cloud Fun Facts Webpage.png" alt="Architecture Diagram" width="800">
+  <p>
     An AI-powered serverless application built with Terraform, AWS Lambda, and Amazon Bedrock.
     <br />
     <a href="#about-the-project"><strong>Explore the docs »</strong></a>
@@ -40,7 +42,7 @@
 
 <h2 id="architecture">Architecture</h2>
 <p align="center">
-  <img src="Diagram/architecture.jpg" alt="Architecture Diagram" width="800">
+  <img src="images/AWS Cloud Fun Facts Generator.jpg" alt="Architecture Diagram" width="800">
 </p>
 <p>
   The application follows a modern serverless flow:
@@ -58,7 +60,6 @@
   <li>Terraform CLI (v1.5.0+) installed locally.</li>
   <li>Terraform Cloud account for remote state management.</li>
 </ul>
-<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h3>Installation</h3>
 <ol>
