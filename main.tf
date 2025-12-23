@@ -219,7 +219,6 @@ resource "aws_s3_bucket_policy" "frontend_bucket_policy" {
 resource "aws_s3_object" "frontend_index" {
   bucket       = aws_s3_bucket.frontend_bucket.id
   key          = "index.html"
-  source       = "${path.module}/frontend/index.html"
   content_type = "text/html"
 
   # Use templatefile to inject the API URL dynamically
