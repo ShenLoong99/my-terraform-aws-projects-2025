@@ -1,5 +1,4 @@
 # Configure the AWS Provider
-// test
 provider "aws" {
   region = var.aws_region
 }
@@ -58,6 +57,12 @@ resource "aws_iam_policy" "rekognition_policy" {
       }
     ]
   })
+
+  # Added tags for IAM Policy
+  tags = {
+    Name    = "${var.project_name}-policy"
+    Project = var.project_name
+  }
 }
 
 // IAM User
@@ -65,6 +70,7 @@ resource "aws_iam_user" "rekognition_user" {
   name = "${var.project_name}-user"
 
   tags = {
+    Name    = "${var.project_name}-user"
     Project = var.project_name
   }
 }
