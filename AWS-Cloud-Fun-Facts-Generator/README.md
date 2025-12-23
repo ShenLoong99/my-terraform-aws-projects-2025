@@ -126,18 +126,18 @@
 
 <h2 id="contact">Contact</h2>
 <p>Tan Si Kai - <a href="https://linkedin.com/in/si-kai-tan">LinkedIn</a></p>
-<p>Project Link: <a href="https://https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator">Cloud Fun Facts</a></p>
+<p>Project Link: <a href="https://https://github.com/ShenLoong99/sky-aws-projects-v1-2025">Cloud Fun Facts</a></p>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
-[contributors-shield]: https://img.shields.io/github/contributors/ShenLoong99/AWS-Cloud-Fun-Facts-Generator.svg?style=for-the-badge
-[contributors-url]: https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ShenLoong99/AWS-Cloud-Fun-Facts-Generator.svg?style=for-the-badge
-[forks-url]: https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator/network/members
-[stars-shield]: https://img.shields.io/github/stars/ShenLoong99/AWS-Cloud-Fun-Facts-Generator.svg?style=for-the-badge
-[stars-url]: https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ShenLoong99/AWS-Cloud-Fun-Facts-Generator.svg?style=for-the-badge
-[issues-url]: https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator/issues
-[license-shield]: https://img.shields.io/github/license/ShenLoong99/AWS-Cloud-Fun-Facts-Generator.svg?style=for-the-badge
-[license-url]: https://github.com/ShenLoong99/AWS-Cloud-Fun-Facts-Generator/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
+[contributors-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
+[forks-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/network/members
+[stars-shield]: https://img.shields.io/github/stars/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
+[stars-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
+[issues-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/issues
+[license-shield]: https://img.shields.io/github/license/ShenLoong99/sky-aws-projects-v1-2025.svg?style=for-the-badge
+[license-url]: https://github.com/ShenLoong99/sky-aws-projects-v1-2025/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/https://linkedin.com/in/si-kai-tan
