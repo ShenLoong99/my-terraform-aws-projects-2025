@@ -7,8 +7,6 @@
 [![Unlicense License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<br />
-
 <div>
   <h1>☁️ Cloud Fun Facts Generator</h1>
   <p>
