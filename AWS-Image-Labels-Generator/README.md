@@ -23,6 +23,7 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
+    <li><a href="#use-cases">Use Cases</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
@@ -53,6 +54,18 @@
   <li><strong>Amazon Rekognition:</strong> A deep-learning-based service that performs the heavy lifting of image analysis and label detection.</li>
   <li><strong>AWS IAM:</strong> Ensures secure, least-privilege access for the application code to interact with AWS services.</li>
   <li><strong>Python (Boto3):</strong> The programming language and SDK used to execute the label detection logic.</li>
+</ul>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
+
+<h2 id="use-cases">Use Cases</h2>
+<p>
+    Amazon Rekognition is a highly versatile service with applications across many industries. This project can be adapted for the following real-world scenarios:
+</p>
+<ul>
+    <li><strong>Smart Surveillance Systems:</strong> Automatically recognize suspicious objects or activities on roads to enhance public safety.</li>
+    <li><strong>Inventory Management:</strong> Identify and catalog products in a store environment to streamline supply chain operations.</li>
+    <li><strong>Retail Analytics:</strong> Analyze customer behavior within physical stores to optimize layouts and marketing strategies.</li>
+    <li><strong>Accessibility Solutions:</strong> Provide automated descriptions of surroundings to assist individuals who are visually impaired.</li>
 </ul>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
