@@ -302,9 +302,6 @@
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="challenges-faced">Challenges</h2>
-<p>
-    During the development of this project, several technical hurdles were encountered. Below are the key challenges and the engineering decisions made to resolve them:
-</p>
 <table>
     <thead>
         <tr>

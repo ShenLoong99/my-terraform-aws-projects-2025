@@ -132,6 +132,49 @@
 </ul>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
+<h2 id="challenges-faced">Challenges</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Challenge</th>
+            <th>Solution</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>IAM Permission Errors</strong></td>
+            <td>
+                Refined IAM policies with least-privilege access and explicit CloudWatch permissions.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>CloudWatch Logs Not Destroyed</strong></td>
+            <td>
+                Managed CloudWatch logs explicitly in Terraform with retention settings.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Lambda Packaging Issues</strong></td>
+            <td>
+                Used Terraform archive_file to package Lambda in a platform-independent way.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Polly Limits & Cost Control</strong></td>
+            <td>
+                Added character guardrails, S3 lifecycle rules, and resource tagging.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>GitHub README Audio Limitation</strong></td>
+            <td>
+                Enabled GitHub Pages to host a simple HTML demo page.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div align="right"><a href="#readme-top">↑ Back to Top</a></div>
+
 <h2 id="cost-optimization">Cost Optimization (Free Tier)</h2>
 <ul>
   <li><strong>Free Tier S3 & Polly:</strong> Small-scale demos stay within AWS free tier limits.</li>
