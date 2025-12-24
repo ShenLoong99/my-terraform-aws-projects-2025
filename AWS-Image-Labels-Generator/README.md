@@ -69,10 +69,10 @@
   The system follows a serverless-inspired architecture to ensure scalability and cost-efficiency:
 </p>
 <ol>
-  <li><strong>Storage Layer:</strong> Images are uploaded to a private Amazon S3 bucket. Access is strictly controlled via a Public Access Block.</li>
-  <li><strong>Processing Layer:</strong> A Python script using the <code>boto3</code> library triggers the <code>DetectLabels</code> API on the Amazon Rekognition service.</li>
-  <li><strong>Identity Layer:</strong> A dedicated IAM user and policy provide the script with specific permissions to read from the S3 bucket and call the Rekognition service.</li>
-  <li><strong>Output Layer:</strong> The script processes the JSON response from Rekognition, displaying detected labels along with their confidence percentages.</li>
+  <li><strong>Storage & Trigger:</strong> An image is uploaded to the S3 Bucket. This action automatically triggers an S3 Event Notification.</li>
+  <li><strong>Compute: AWS Lambda</strong> receives the event, extracts the image metadata, and sends it to Amazon Rekognition.</li>
+  <li><strong>Analysis:</strong> Rekognition performs label detection and returns the results to the Lambda function.</li>
+  <li><strong>Logging:</strong> Results and confidence scores are streamed to Amazon CloudWatch Logs for real-time monitoring.</li>
 </ol>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
@@ -114,19 +114,181 @@
     <pre>aws s3 cp &lt;your-image-file-name&gt; s3://&lt;your-s3-bucket-name&gt;</pre>
     <img src="assets/busy-traffic-road.jpg" alt="busy-traffic-road" width="400">
   </li>
-  <li>Update the <code>IMAGE_NAME</code> variable in <code>detect_labels.py</code> to match your file name.</li>
-  <li>Run the script: <code>python detect_labels.py</code>.</li>
-  <li>The script will output a list of detected objects (e.g., "Car: 99.2%", "Pedestrian: 88.5%") and display the image with bounding boxes if available.</li>
+  <li>
+    <strong>Start the Log Stream:</strong> Open your VS Code terminal and run the following command to see results as they happen.<br>
+    <pre>aws logs tail /aws/lambda/&gt; s3://&lt;your-s3-bucket-name&gt; --follow</pre>
+    Use the command below if on Git Bash Terminal: <br>
+    <pre>MSYS_NO_PATHCONV=1 aws logs tail /aws/lambda/&gt; s3://&lt;your-s3-bucket-name&gt; --follow</pre>
+  </li>
+  <li>
+    <strong>View Results:</strong> The detection results will appear instantly in your VS Code terminal.<br>
+    AWS Console CloudWatch Log Output: <br>
+    <img src="assets/aws-cloudwatch-logs-output.png" alt="busy-traffic-road" width="800"><br>
+    Terminal Output: <br>
+    <img src="assets/cloudwatch-logs-output-cli.png" alt="busy-traffic-road" width="800"><br>
+    Sample result: <br>
+    <pre>
+      [
+        {
+          "Name": "Animal",
+          "Confidence": 99.993408203125,
+          "Instances": [],
+          "Parents": [],
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Animals and Pets"
+            }
+          ]
+        },
+        {
+          "Name": "Cat",
+          "Confidence": 99.993408203125,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Width": 0.3602134585380554,
+                "Height": 0.670926570892334,
+                "Left": 0.5902238488197327,
+                "Top": 0.13030071556568146
+              },
+              "Confidence": 89.81806945800781
+            },
+            {
+              "BoundingBox": {
+                "Width": 0.24711352586746216,
+                "Height": 0.6337666511535645,
+                "Left": 0.39016199111938477,
+                "Top": 0.16519160568714142
+              },
+              "Confidence": 82.076171875
+            },
+            {
+              "BoundingBox": {
+                "Width": 0.4233805239200592,
+                "Height": 0.7645028829574585,
+                "Left": 0.024279789999127388,
+                "Top": 0.012194041162729263
+              },
+              "Confidence": 80.09024047851562
+            },
+            {
+              "BoundingBox": {
+                "Width": 0.23163087666034698,
+                "Height": 0.7965526580810547,
+                "Left": 0.24353167414665222,
+                "Top": 0.009294004179537296
+              },
+              "Confidence": 73.9099349975586
+            }
+          ],
+          "Parents": [
+            {
+              "Name": "Animal"
+            },
+            {
+              "Name": "Mammal"
+            },
+            {
+              "Name": "Pet"
+            }
+          ],
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Animals and Pets"
+            }
+          ]
+        },
+        {
+          "Name": "Kitten",
+          "Confidence": 99.993408203125,
+          "Instances": [],
+          "Parents": [
+            {
+              "Name": "Animal"
+            },
+            {
+              "Name": "Cat"
+            },
+            {
+              "Name": "Mammal"
+            },
+            {
+              "Name": "Pet"
+            }
+          ],
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Animals and Pets"
+            }
+          ]
+        },
+        {
+          "Name": "Mammal",
+          "Confidence": 99.993408203125,
+          "Instances": [],
+          "Parents": [
+            {
+              "Name": "Animal"
+            }
+          ],
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Animals and Pets"
+            }
+          ]
+        },
+        {
+          "Name": "Pet",
+          "Confidence": 99.993408203125,
+          "Instances": [],
+          "Parents": [
+            {
+              "Name": "Animal"
+            }
+          ],
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Animals and Pets"
+            }
+          ]
+        },
+        {
+          "Name": "Grass",
+          "Confidence": 99.5927734375,
+          "Instances": [],
+          "Parents": [
+            {
+              "Name": "Plant"
+            }
+          ],
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Plants and Flowers"
+            }
+          ]
+        },
+        {
+          "Name": "Plant",
+          "Confidence": 99.5927734375,
+          "Instances": [],
+          "Parents": [],
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Plants and Flowers"
+            }
+          ]
+        }
+      ]
+    </pre>
+  </li>
 </ol>
-<h3>
-  Browser Output
-</h3>
-  <img src="assets/busy-traffic-road-ui-output.png" alt="busy-traffic-road-ui-output" width="800">
-</p>
-<h3>
-  CLI Output
-</h3>
-<img src="assets/busy-traffic-road-cli-output.png" alt="busy-traffic-road-cli-output" width="400">
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
 <h2 id="roadmap">Project Roadmap</h2>
@@ -147,6 +309,8 @@
   <li><strong>Confidence Thresholds:</strong> By setting a <code>MIN_CONFIDENCE</code> level (e.g., 70%), we filter out low-certainty results, reducing unnecessary data processing.</li>
   <li><strong>Free Tier Utilization:</strong> Amazon Rekognition and S3 both offer free tier limits for the first 12 months, which this project stays within for light usage.</li>
   <li><strong>Manual Apply in TFC:</strong> Set Terraform Cloud to "Manual Apply" to prevent accidental resource creation and associated costs.</li>
+  <li><strong>Serverless Execution:</strong> By using Lambda instead of a local environment, you only pay for the milliseconds the code is actually running (1M free requests/month).</li>
+  <li><strong>Log Retention:</strong> Added a CloudWatch Log Group with a 7-day retention policy to avoid long-term storage costs for test logs.</li>
 </ul>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 
