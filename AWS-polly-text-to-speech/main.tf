@@ -13,11 +13,13 @@ data "archive_file" "lambda_zip" {
 resource "aws_s3_bucket" "input_bucket" {
   bucket        = "polly-input-bucket-${random_id.suffix.hex}"
   force_destroy = true # demo purpose
+  tags          = var.tags
 }
 
 resource "aws_s3_bucket" "output_bucket" {
   bucket        = "polly-output-bucket-${random_id.suffix.hex}"
   force_destroy = true # demo purpose
+  tags          = var.tags
 }
 
 resource "random_id" "suffix" {
@@ -93,6 +95,8 @@ resource "aws_iam_policy" "lambda_policy" {
       }
     ]
   })
+
+  tags = var.tags
 }
 
 // Attach Policy
@@ -119,6 +123,8 @@ resource "aws_lambda_function" "polly_lambda" {
       OUTPUT_BUCKET = aws_s3_bucket.output_bucket.bucket
     }
   }
+
+  tags = var.tags
 }
 
 // Permission for S3 to invoke Lambda
@@ -165,9 +171,22 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "output_enc" {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // S3 Lifecycle Rule (Cost Control)
+resource "aws_s3_bucket_lifecycle_configuration" "input_lifecycle" {
+  bucket = aws_s3_bucket.input_bucket.id
+  rule {
+    id     = "delete-all-audio-after-30-days"
+    status = "Enabled"
+
+    filter {} # applies to all objects
+
+    expiration {
+      days = 30
+    }
+  }
+}
+
 resource "aws_s3_bucket_lifecycle_configuration" "output_lifecycle" {
   bucket = aws_s3_bucket.output_bucket.id
-
   rule {
     id     = "delete-all-audio-after-30-days"
     status = "Enabled"
@@ -183,5 +202,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "output_lifecycle" {
 // CloudWatch Log Group for Lambda
 resource "aws_cloudwatch_log_group" "lambda_log_group" {
   name              = "/aws/lambda/${aws_lambda_function.polly_lambda.function_name}"
-  retention_in_days = 7   # optional, auto-delete after N days
+  retention_in_days = 7 # optional, auto-delete after N days
+  tags              = var.tags
 }
