@@ -110,7 +110,8 @@
 </p>
 <ol>
   <li>
-    Upload an image (e.g., <code>busy-traffic-road.jpg</code>) to the S3 bucket created by Terraform.
+    Upload an image (e.g., <code>busy-traffic-road.jpg</code>) to the S3 bucket created by Terraform.<br>
+    <pre>aws s3 cp &lt;your-image-file-name&gt; s3://&lt;your-s3-bucket-name&gt;</pre>
     <img src="assets/busy-traffic-road.jpg" alt="busy-traffic-road" width="400">
   </li>
   <li>Update the <code>IMAGE_NAME</code> variable in <code>detect_labels.py</code> to match your file name.</li>
