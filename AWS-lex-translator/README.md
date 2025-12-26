@@ -105,7 +105,6 @@
   <li>Important: In the <code>Slot value resolution</code> section, select <code>Restrict to slot values</code>. This ensures the user must pick a language your code can handle.</li>
   <li>Click Done.</li>
 </ol>
-<img src="assets/aws-console-slot-type-config-page.png" alt="aws-console-slot-type-config-page" width="400" />
 
 <h4>Create Intent & Define Slots: </h4>
 <ol>
@@ -172,7 +171,6 @@
          <li><strong>User Types:</strong> <code> "The weather is beautiful today."</code></li>
          <li><strong>What to look for:</strong> Lex should capture this entire string as the <code>phrase</code> value and internally move to the next missing slot.</li>
       </ul>
-      <img src="assets/chatbot-test-output-1.png" alt="aws-console-slot-type-config-page" width="400" />
    </li>
    <li>
       <strong>The Second Elicitation (Turn 3):</strong> 
@@ -181,13 +179,13 @@
          <li><strong>User Types:</strong> <code>"User Types"</code> or <code>es</code></li>
          li><strong>What to look for:</strong> Once this last piece of data is collected, Lex should finally trigger the Fulfillment (calling your Lambda function).</li>
       </ul>
-      <img src="assets/chatbot-test-output-2.png" alt="aws-console-slot-type-config-page" width="400" />
    </li>
    <li>
       <strong>The Fulfillment (Final Turn):</strong> 
       <ul>
          <li><strong>Bot Responds:</strong> <code>"Here is the translation: El tiempo es hermoso hoy."</code></li>
       </ul>
+      <img src="assets/chatbot-test-output-2.png" alt="aws-console-slot-type-config-page" width="400" />
    </li>
 </ol>
 <h3>Other Testing Checklist: </h3>
