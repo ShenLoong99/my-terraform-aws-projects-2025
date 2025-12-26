@@ -1,7 +1,8 @@
 <a id="readme-top"></a>
 <div>
    <h1>🤖 AWS Lex AI-Translator Bot</h1>
-   <p align="center"> <img src="assets/aws-lex-chatbot-cover.png" alt="aws-lex-chatbot-cover" width="800">
+   <p align="center">
+    <img src="assets/aws-lex-chatbot-cover.png" alt="aws-lex-chatbot-cover" width="800">
    </p>
    <p> The <strong>AWS Lex AI-Translator</strong> is a sophisticated serverless solution that leverages natural language understanding (NLU) to translate user phrases into multiple languages instantly. By combining <strong>Amazon Lex V2</strong> for conversation management and <strong>Amazon Translate</strong> for high-fidelity linguistics, this project demonstrates a production-ready "Hybrid" IaC workflow. <br /> <a href="#about-the-project"><strong>Explore the docs »</strong></a> </p>
 </div>
@@ -44,6 +45,7 @@
 </ul>
 <div align="right"><a href="#readme-top">↑ Back to Top</a></div>
 <h2 id="architecture">Architecture</h2>
+<img src="assets/AWS-lex-translator.jpg" alt="aws-lex-chatbot-cover" width="800">
 <p> The architecture is built for high availability and least-privilege security: </p>
 <ol>
    <li><strong>Interaction:</strong> The user speaks or types a phrase into the Lex V2 interface.</li>
