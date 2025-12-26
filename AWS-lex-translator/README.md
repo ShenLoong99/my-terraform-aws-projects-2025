@@ -74,7 +74,7 @@
       <pre>terraform apply</pre>
    </li>
 </ol>
-<h3>2. Configure Lex V2 Console</h3>
+<h3>3. Configure Lex V2 Console</h3>
 <p>Follow these steps to build the conversational layer: </p>
 <h4>Create Bot: </h4>
 <ol>
